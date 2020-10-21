@@ -1,1 +1,3 @@
 # TrytonTrainingLocal
+
+Temporary repo

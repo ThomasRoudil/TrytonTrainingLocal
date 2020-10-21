@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<form>
+    <xpath expr="/form/field[@name='is_available']" position="after">
+        <label name="borrowed"/>
+        <field name="borrowed"/>"
+        <label name="shelf"/>
+        <field name="shelf"/>
+        <label name="reserve"/>
+        <field name="reserve"/>
+        <label name="quarantine"/>
+        <field name="quarantine"/>
+        <label name="ready_to_quit_quarantine"/>
+        <field name="ready_to_quit_quarantine"/>
+        <button string="Quit quarantine" name="quit_quarantine" icon="tryton-new" colspan="2"/>
+    </xpath>
+</form>

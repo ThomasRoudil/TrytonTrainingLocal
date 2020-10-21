@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree>
+    <xpath expr="/tree/field[@name='rec_name']" position="after">
+        <field name="shelf"/>
+        <field name="reserve"/>
+        <field name="quarantine"/>
+        <field name="borrowed"/>
+        <field name="ready_to_quit_quarantine"/>
+        <button string="Quit quarantine" name="quit_quarantine" icon="tryton-new" colspan="2"/>
+    </xpath>
+</tree>

@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- ##################### -->
+        <!-- # Special locations # -->
+        <!-- ##################### -->
+        <menuitem name="Special locations" id="menu_library_localisation_special_locations" sequence="2"/>
+        <!-- ######### -->
+        <!-- # Room  # -->
+        <!-- ######### -->
+        <record model="ir.ui.view" id="room_view_form">
+            <field name="model">library.room</field>
+            <field name="type">form</field>
+            <field name="name">room_form</field>
+        </record>
+        <record model="ir.ui.view" id="room_view_list">
+            <field name="model">library.room</field>
+            <field name="type">tree</field>
+            <field name="name">room_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_open_room">
+            <field name="name">Rooms</field>
+            <field name="res_model">library.room</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_room_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="room_view_list"/>
+            <field name="act_window" ref="act_open_room"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_room_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="room_view_form"/>
+            <field name="act_window" ref="act_open_room"/>
+        </record>
+        <menuitem parent="library.menu_library" sequence="70" action="act_open_room" id="menu_open_room"/>
+        <!-- ############ -->
+        <!-- # Reserve  # -->
+        <!-- ############ -->
+        <record model="ir.ui.view" id="reserve_view_form">
+            <field name="model">library.reserve</field>
+            <field name="type">form</field>
+            <field name="name">reserve_form</field>
+        </record>
+        <record model="ir.ui.view" id="reserve_view_list">
+            <field name="model">library.reserve</field>
+            <field name="type">tree</field>
+            <field name="name">reserve_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_open_reserve">
+            <field name="name">Reserve</field>
+            <field name="res_model">library.reserve</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_reserve_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="reserve_view_list"/>
+            <field name="act_window" ref="act_open_reserve"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_reserve_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="reserve_view_form"/>
+            <field name="act_window" ref="act_open_reserve"/>
+        </record>
+        <menuitem parent="menu_library_localisation_special_locations" sequence="1" action="act_open_reserve" id="menu_open_reserve"/>
+        <!-- ############### -->
+        <!-- # Quarantine  # -->
+        <!-- ############### -->
+        <record model="ir.ui.view" id="quarantine_view_form">
+            <field name="model">library.quarantine</field>
+            <field name="type">form</field>
+            <field name="name">quarantine_form</field>
+        </record>
+        <record model="ir.ui.view" id="quarantine_view_list">
+            <field name="model">library.quarantine</field>
+            <field name="type">tree</field>
+            <field name="name">quarantine_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_open_quarantine">
+            <field name="name">Quarantine</field>
+            <field name="res_model">library.quarantine</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_quarantine_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="quarantine_view_list"/>
+            <field name="act_window" ref="act_open_quarantine"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_quarantine_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="quarantine_view_form"/>
+            <field name="act_window" ref="act_open_quarantine"/>
+        </record>
+        <menuitem parent="menu_library_localisation_special_locations" sequence="2" action="act_open_quarantine" id="menu_open_quarantine"/>
+        <!-- ######### -->
+        <!-- # Shelf # -->
+        <!-- ######### -->
+        <record model="ir.ui.view" id="shelf_view_form">
+            <field name="model">library.room.shelf</field>
+            <field name="type">form</field>
+            <field name="name">shelf_form</field>
+        </record>
+        <record model="ir.ui.view" id="shelf_view_list">
+            <field name="model">library.room.shelf</field>
+            <field name="type">tree</field>
+            <field name="name">shelf_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_open_shelf">
+            <field name="name">Shelves</field>
+            <field name="res_model">library.room.shelf</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_shelf_view_list">
+            <field name="sequence" eval="30"/>
+            <field name="view" ref="shelf_view_list"/>
+            <field name="act_window" ref="act_open_shelf"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_shelf_view_form">
+            <field name="sequence" eval="40"/>
+            <field name="view" ref="shelf_view_form"/>
+            <field name="act_window" ref="act_open_shelf"/>
+        </record>
+        <!-- ############# -->
+        <!-- # Exemplary # -->
+        <!-- ############# -->
+        <record model="ir.ui.view" id="exemplary_view_form">
+            <field name="model">library.book.exemplary</field>
+            <field name="inherit" ref="library.exemplary_view_form"/>
+            <field name="name">exemplary_form</field>
+        </record>
+        <record model="ir.ui.view" id="exemplary_view_list">
+            <field name="model">library.book.exemplary</field>
+            <field name="inherit" ref="library.exemplary_view_list"/>
+            <field name="name">exemplary_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_open_exemplary">
+            <field name="name">Exemplaries</field>
+            <field name="res_model">library.book.exemplary</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_exemplary_view_list">
+            <field name="sequence" eval="50"/>
+            <field name="view" ref="exemplary_view_list"/>
+            <field name="act_window" ref="act_open_exemplary"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_open_exemplary_view_form">
+            <field name="sequence" eval="60"/>
+            <field name="view" ref="exemplary_view_form"/>
+            <field name="act_window" ref="act_open_exemplary"/>
+        </record>
+        <menuitem parent="library.menu_library" sequence="90" action="act_open_exemplary" id="menu_open_exemplary"/>
+    </data>
+</tryton>
